@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{email.title}}</ion-title>
+        <ion-button fill="outline" slot="end" (click)="dismiss()">
+            <ion-icon name="close"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-text color="primary">
+                <h3><strong>From:</strong> {{email.email}}</h3>
+            </ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-text color="#000">
+                <p>{{email.content}}</p>
+            </ion-text>
+        </ion-item>
+    </ion-list>
+</ion-content>

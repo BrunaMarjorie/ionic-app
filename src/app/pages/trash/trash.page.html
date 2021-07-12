@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Trash</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of trashEmails; let i = index">
+        <ion-item button (click)="presentModal(i)">
+            <ion-label lines="full">
+                <ion-text color="primary">
+                    <h3>{{item.title}}</h3>
+                </ion-text>
+                <p> {{item.email}} </p>
+                <ion-text color="#000">
+                    <p>{{item.content}}</p>
+                </ion-text>
+            </ion-label>
+        </ion-item>
+            <ion-button fill="outline" slot="end" (click)="removeItem(i)">delete</ion-button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

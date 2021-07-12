@@ -1,0 +1,29 @@
+<ion-header>
+    <link href="inbox.page.scss">
+    <ion-toolbar>
+        <ion-title>Inbox</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button size="small" (click)="addEmail()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <ion-list>
+        <ion-item *ngFor="let email of emails; let i = index" button (click)="presentModal(i)">
+                <ion-label lines="full">
+                    <ion-text color="primary">
+                        <h3>{{email.title}}</h3>
+                    </ion-text>
+                    <p> {{email.email}} </p>
+                    <ion-text color="#000">
+                        <p>{{email.content}}</p>
+                    </ion-text>
+                </ion-label>
+            <ion-button fill="outline" slot="end" (click)="removeItem(i)">delete</ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
